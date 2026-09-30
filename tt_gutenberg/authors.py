@@ -4,7 +4,7 @@ from .transform import get_data
 def list_authors(by_languages=True, alias=True):
     # list authors/aliases ordered by translation count, most to fewest
     df = get_data()
-    name_col = "alias" if alias else "author"
+    name_col = "author_alias" if alias else "author"
     df = df.dropna(subset=[name_col])
 
     if by_languages:
