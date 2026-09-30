@@ -1,9 +1,9 @@
-from . import transform
+from .transform import get_data
 
 
 def list_authors(by_languages=True, alias=True):
     # list authors/aliases ordered by translation count, most to fewest
-    df = transform.get_data()
+    df = get_data()
     name_col = "alias" if alias else "author"
     df = df.dropna(subset=[name_col])
 
